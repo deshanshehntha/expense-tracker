@@ -24,4 +24,7 @@ public class Transaction {
 
     @Column
     private String note;
+
+    @Column
+    private TransactionType type;
 }

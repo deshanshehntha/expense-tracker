@@ -21,8 +21,18 @@ public class TransactionController {
         return transactionService.createTransaction(transaction);
     }
 
+    @PatchMapping("/{id}")
+    private Transaction updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction) {
+        return transactionService.updateTransaction(id, transaction);
+    }
+
+    @DeleteMapping("/{id}")
+    private boolean deleteTransaction(@PathVariable Long id) {
+        return transactionService.deleteTransaction(id);
+    }
+
     @GetMapping()
-    private List<Transaction> getAllCategories() {
+    private List<Transaction> getAllTransactions() {
         return transactionService.getAllTransactions();
     }
 }

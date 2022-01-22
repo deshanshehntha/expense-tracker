@@ -15,6 +15,7 @@ public class CategoryService {
     private final CategoryRepository categoryRepository;
 
     public Long createCategory(Category category) {
+        category.setBalance(category.getInitialAmount());
         Category newCategory = categoryRepository.save(category);
         return newCategory.getCategoryId();
     }
